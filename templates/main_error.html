@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Default Display</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Poppins:100,200&display=swap" rel="stylesheet">
+    <style>
+        /* MASTER STYLES */
+body {
+    margin: 0px;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* NAV BAR STYLES */
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 35px;
+}
+
+.nav-wrapper > .left-side > div {
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.bod-items{
+    margin-bottom: 50px;
+    text-align:center;
+}
+    </style>
+</head>
+<body>
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div>{{country}}</div>
+            </div>
+        </div>
+
+    <div class="bod-items">
+        <h1>The country is {{country}} because {{error_country}} could not be found</h1>
+        <!--<h1>The cases in {{country}} are {{cases}}</h1>-->
+        <img src="{{ url_for('static', filename = graph) }}" alt="Chart" height="400" width="450">
+    </div>
+</body>
+</html>

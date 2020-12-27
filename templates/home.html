@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Poppins:100,200&display=swap" rel="stylesheet">
+    <style>
+        /* MASTER STYLES */
+body {
+    margin: 0px;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* NAV BAR STYLES */
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 35px;
+}
+
+.nav-wrapper > .left-side > div {
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.bod-items{
+    margin-bottom: 50px;
+    text-align:center;
+}
+
+.bod-items input[type="submit"],
+{
+	-moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	background-color: #2CBBBB;
+	border: 1px solid #27A0A0;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="bod-items">
+        <h1>Input Country:</h1>
+    <form method="POST" action="{{url_for('goto')}}">
+        <input type="text" name="country">
+        <input type="radio" id="confirmed" name="type" value="confirmed" checked="checked">
+        <label for="confirmed">Confirmed</label><br>
+        <input type="radio" id="recovered" name="type" value="recovered">
+        <label for="recovered">Recovered</label><br>
+        <input type="submit">
+    </form>
+    </div>
+</body>
+</html>
